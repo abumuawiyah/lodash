@@ -3,7 +3,9 @@ const modules = {
   find,
   map,
   each,
-  pick
+  pick,
+  head,
+  tail
 };
 
 function filter(arr, cb) {
@@ -32,6 +34,16 @@ function pick(obj, arr) {
     .reduce((a, b) => {
       return { ...a, ...b };
     });
+}
+
+function head(arr) {
+  const [first] = arr;
+  return first;
+}
+
+function tail(arr) {
+  const [, ...tail] = arr;
+  return tail;
 }
 
 export default modules;
