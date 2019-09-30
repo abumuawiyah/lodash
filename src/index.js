@@ -37,6 +37,25 @@ console.log("lodash", e_.head([1, 2, 3, 4]));
 console.log("es6 tail", _.tail([1, 2, 3, 4]));
 console.log("lodash", e_.tail([1, 2, 3, 4]));
 
+var users = [
+  { name: "Azizi", age: 34 },
+  { name: "Hafsa", age: 5 },
+  { name: "Huda", age: 34 },
+  { name: "Rumaysa", age: 1 }
+];
+
+console.log(_.toObject(users));
+console.log(_.toObject(users, d => d.name));
+console.log(
+  _.toObject(
+    users,
+    d => d.name,
+    d => {
+      return { ...d, school: "none" };
+    }
+  )
+);
+
 document.getElementById("app").innerHTML = `
 <h1>Hello Lodash, Bye Lodash!</h1>
 <div>

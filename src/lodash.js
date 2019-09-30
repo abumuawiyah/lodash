@@ -5,7 +5,8 @@ const modules = {
   each,
   pick,
   head,
-  tail
+  tail,
+  toObject
 };
 
 function filter(arr, cb) {
@@ -44,6 +45,13 @@ function head(arr) {
 function tail(arr) {
   const [, ...tail] = arr;
   return tail;
+}
+
+function toObject(arr, key, value) {
+  return arr.reduce((prev, next, idx) => {
+    prev[key ? key(next) : idx] = value ? value(next) : next;
+    return prev;
+  }, {});
 }
 
 export default modules;
