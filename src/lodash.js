@@ -6,7 +6,9 @@ const modules = {
   pick,
   head,
   tail,
-  toObject
+  toObject,
+  compact,
+  difference
 };
 
 function filter(arr, cb) {
@@ -52,6 +54,14 @@ function toObject(arr, key, value) {
     prev[key ? key(next) : idx] = value ? value(next) : next;
     return prev;
   }, {});
+}
+
+function compact(arr) {
+  return arr.filter(Boolean);
+}
+
+function difference(arr) {
+  return arr.reduce((a, b) => a.filter(c => !b.includes(c)));
 }
 
 export default modules;

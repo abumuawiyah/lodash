@@ -56,6 +56,12 @@ console.log(
   )
 );
 
+console.log("es6 compact", _.compact([0, 1, false, 2, "", 3]));
+console.log("lodash", e_.compact([0, 1, false, 2, "", 3]));
+
+console.log("es6 difference", _.difference([[1, 2, 3, 4, 5], [5, 2, 10]]));
+console.log("lodash", e_.difference([1, 2, 3, 4, 5], [5, 2, 10]));
+
 document.getElementById("app").innerHTML = `
 <h1>Hello Lodash, Bye Lodash!</h1>
 <div>
