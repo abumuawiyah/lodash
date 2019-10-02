@@ -8,7 +8,8 @@ const modules = {
   tail,
   toObject,
   compact,
-  difference
+  difference,
+  getFirstLast
 };
 
 function filter(arr, cb) {
@@ -62,6 +63,12 @@ function compact(arr) {
 
 function difference(arr) {
   return arr.reduce((a, b) => a.filter(c => !b.includes(c)));
+}
+
+function getFirstLast(arr) {
+  const { 0: first, length: len, [len - 1]: last } = arr;
+
+  return { first, last };
 }
 
 export default modules;
