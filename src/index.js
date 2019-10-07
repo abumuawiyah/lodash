@@ -65,6 +65,16 @@ console.log("lodash", e_.difference([1, 2, 3, 4, 5], [5, 2, 10]));
 console.log("getFirstLast 1", _.getFirstLast("apple"));
 console.log("getFirstLast 2", _.getFirstLast(["foo", "bar", "baz", "quux"]));
 
+let test1 = { a: 1, b: 2 };
+
+let test = e_.merge({}, test1);
+
+console.log(test);
+
+test1.a = "5";
+
+console.log(test);
+
 document.getElementById("app").innerHTML = `
 <h1>Hello Lodash, Bye Lodash!</h1>
 <div>
