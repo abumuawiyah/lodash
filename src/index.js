@@ -75,6 +75,27 @@ test1.a = "5";
 
 console.log(test);
 
+function switchFn(flag) {
+  let initialState = {
+    a: "A",
+    b: "B"
+  };
+
+  switch (flag) {
+    case "a":
+      initialState.a = "a";
+      return console.log(initialState);
+    case "b":
+      initialState.b = "b";
+      return console.log(initialState);
+    default:
+      return console.log(initialState);
+  }
+}
+
+switchFn("a");
+switchFn("b");
+
 document.getElementById("app").innerHTML = `
 <h1>Hello Lodash, Bye Lodash!</h1>
 <div>
